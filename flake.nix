@@ -12,17 +12,17 @@
         packages = with pkgs; [
           (texlive.combine {
             inherit (texlive)
-              scheme-small
-              latexmk
-              collection-latexrecommended
-              collection-fontsrecommended
-              collection-langjapanese
-              xetex luatex dvisvgm dvipng
-              uplatex comment subfigure mathtools
-              physics siunitx titlesec here
-              float placeins ulem url moreverb
-              tocbibind biber biblatex
-              chktex;
+            scheme-small
+            latexmk
+            collection-latexrecommended
+            collection-fontsrecommended
+            collection-langjapanese
+            xetex luatex dvisvgm dvipng
+            uplatex comment subfigure mathtools
+            physics siunitx titlesec here
+            float placeins ulem url moreverb
+            tocbibind biber biblatex
+            chktex;
           })
           ghostscript
           poppler_utils
