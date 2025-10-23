@@ -12,10 +12,11 @@ nixとdirenvが入っていれば大丈夫そう（後に詳細に書く）
 
 ## usage
 
+`flake.nix`の`system`を使用しているアーキテクチャに合わせて変更する
 
 初回のみ
 
-```bash
+```basｗ
 direnv allow .
 ```
 

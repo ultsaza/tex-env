@@ -5,14 +5,10 @@
 
   outputs = { self, nixpkgs }:
   let
-    systems = [ "x86_64-linux" "aarch64-linux" ];
-    forAll = f: nixpkgs.lib.genAttrs systems (system:
-      let pkgs = import nixpkgs { inherit system; };
-      in f pkgs
-    );
+    system = "x86_64-linux"; # Change this to your desired system 
+    pkgs = import nixpkgs { inherit system; };
   in {
-    devShells = forAll (pkgs: {
-      default = pkgs.mkShell {
+    devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
           (texlive.combine {
             inherit (texlive)
@@ -22,30 +18,15 @@
               collection-fontsrecommended
               collection-langjapanese
               xetex luatex dvisvgm dvipng
-              uplatex
-              comment
-              subfigure mathtools
-              physics siunitx
-              titlesec
-              here
-              float
-              placeins
-              ulem
-              url
-              moreverb
-              tocbibind
-              biber
-              biblatex
+              uplatex comment subfigure mathtools
+              physics siunitx titlesec here
+              float placeins ulem url moreverb
+              tocbibind biber biblatex
               chktex;
           })
           ghostscript
           poppler_utils
         ];
-        # VS Code からも PATH を確実に拾わせたい場合の目印
-        shellHook = ''
-          echo "TeX devShell ready (latexmk=$(command -v latexmk))"
-        '';
       };
-    });
   };
 }
