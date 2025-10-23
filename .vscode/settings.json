@@ -1,41 +1,22 @@
 {
-      // 保存時に自動ビルド
+   // 保存時に自動ビルド
   "latex-workshop.latex.autoBuild.run": "onSave",
 
-  // 使うレシピ（uplatex + dvipdfmx）
   "latex-workshop.latex.recipes": [
     {
-      "name": "uplatex + dvipdfmx",
-      "tools": ["uplatex", "dvipdfmx"]
+      "name": "uplatex + biber + dvipdfmx",
+      "tools": ["uplatex", "biber", "uplatex", "uplatex", "dvipdfmx"]
     }
   ],
-
-  // 出力先
-  "latex-workshop.latex.outDir": "./out",
-
-  // 実行されるコマンドの定義
   "latex-workshop.latex.tools": [
-    {
-      "name": "uplatex",
-      "command": "uplatex",
-      "args": [
-        "-interaction=nonstopmode", 
-        "-aux-directory=%OUTDIR%", 
-        "-output-directory=%OUTDIR%",
-        "-toc-directory=%OUTDIR%",
-        "%DOC%"
-    ]
-    },
-    {
-      "name": "dvipdfmx",
-      "command": "dvipdfmx",
-      "args": [
-        "%OUTDIR%/%DOCFILE%.dvi",
-        "-dvi-directory=%OUTDIR%",
-    ]
-    }
+    { "name": "uplatex", "command": "uplatex",
+      "args": ["-interaction=nonstopmode","-aux-directory=%OUTDIR%","-output-directory=%OUTDIR%","-toc-directory=%OUTDIR%","%DOC%"] },
+    { "name": "biber", "command": "biber",
+      "args": ["--input-directory","%OUTDIR%","--output-directory","%OUTDIR%","%DOCFILE%"] },
+    { "name": "dvipdfmx", "command": "dvipdfmx",
+      "args": ["%OUTDIR%/%DOCFILE%.dvi","-dvi-directory=%OUTDIR%"] }
   ],
-
+  "latex-workshop.latex.outDir": "./out",
   // PDFをエディタ内でプレビュー
   "latex-workshop.view.pdf.viewer": "tab"
 }

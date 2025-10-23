@@ -34,6 +34,8 @@
               url
               moreverb
               tocbibind
+              biber
+              biblatex
               chktex;
           })
           ghostscript
