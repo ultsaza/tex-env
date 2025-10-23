@@ -22,6 +22,7 @@
         "-interaction=nonstopmode", 
         "-aux-directory=%OUTDIR%", 
         "-output-directory=%OUTDIR%",
+        "-toc-directory=%OUTDIR%",
         "%DOC%"
     ]
     },
