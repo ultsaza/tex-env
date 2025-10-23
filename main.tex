@@ -1,106 +1,16 @@
 \documentclass[dvipdfmx,a4j,11pt]{jsarticle}
-
-\usepackage{bm} 
-\usepackage{amsmath} 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{latexsym}
-\usepackage{mathtools}
-\usepackage[dvipdfmx]{graphicx,color} 
-\usepackage[dvipdfmx, % 自動的にハイパーリンクを作成するための設定
-             bookmarks=true,
-             bookmarksnumbered=true,
-             bookmarkstype=true]{hyperref}
-\usepackage{pxjahyper} % pLaTeXでhyperrefにおけるPDFの目次の文字化け問題を調整
-\usepackage{url}
-\usepackage{ulem}
-\usepackage{subfigure}
-\usepackage{comment} %\begin{comment} こんな感じでコメントアウト \end{comment}
-\usepackage{physics}
-\usepackage{listings}
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage{ascmac}
-\usepackage{fancybox}
-\usepackage{titlesec} % 見出しのフォントを変更するためのパッケージ
-\usepackage{moreverb}
-\usepackage{tikz}
-\usepackage{here}
-\usepackage{float}
-\usepackage{tocbibind}
-\usepackage{placeins}
-
-
-
-% 見出しのフォントとスタイルの設定
-\titleformat{\section}
-  {\normalfont\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-  \titleformat{\paragraph}[runin] % runin は見出しを本文と同じ行に表示するオプション
-  {\normalfont\bfseries} % 太字で通常のフォントスタイル
-  {} % 見出し番号は表示しない
-  {0em} % 見出しと本文の間のスペース
-  {} % 追加のスタイルなし
-
-
-% listingsパッケージの設定
-\lstset{
-    language=C,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{blue}\bfseries,
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    tabsize=4,
-    showspaces=false,
-    showstringspaces=false,
-    breaklines=true,
-    numbers=left,
-    numberstyle=\tiny\color{gray},
-    stepnumber=1,
-    numbersep=5pt
-}
-
-
-
+\input{packages.tex}
 \begin{document}
-\begin{titlepage}
-    \begin{center}
-
-        {\Large 提出日: \today}
-
-        
-
-        \vspace{40truept}
-
-        
-
-        \vspace*{180truept}
-
-        {\Huge  title} 
-        \vspace{10truept}
-
-            {\Huge subtitle}
-        \vspace{160truept}
-
-
-        {\Large 学籍番号: num}
-        \vspace{10truept}
-
-        \vspace{10truept}
-        {\Large 氏名: name} 
-        \vspace{10truept}
-
-        {\Large }  
-
-    \end{center}
-\end{titlepage}
-\newpage
-
+\input{title_page.tex}
+\newpage 
 \tableofcontents
 \newpage
 
-\addcontentsline{toc}{section}{はじめに}
+\addcontentsline{toc}{section}{はじめに} % section* を目次に追加する.
+\section*{はじめに}
+
+\begin{align}
+  \vb*{F} = m \vb*{a}
+\end{align}
+
 \end{document}
