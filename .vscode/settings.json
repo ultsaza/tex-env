@@ -1,0 +1,32 @@
+{
+      // 保存時に自動ビルド
+  "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // 使うレシピ（uplatex + dvipdfmx）
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "uplatex + dvipdfmx",
+      "tools": ["uplatex", "dvipdfmx"]
+    }
+  ],
+
+  // 出力先
+  "latex-workshop.latex.outDir": "./out",
+
+  // 実行されるコマンドの定義
+  "latex-workshop.latex.tools": [
+    {
+      "name": "uplatex",
+      "command": "uplatex",
+      "args": ["-interaction=nonstopmode", "-outdir=%OUTDIR%", "%DOC%"]
+    },
+    {
+      "name": "dvipdfmx",
+      "command": "dvipdfmx",
+      "args": ["%DOCFILE%.dvi"]
+    }
+  ],
+
+  // PDFをエディタ内でプレビュー
+  "latex-workshop.view.pdf.viewer": "tab"
+}

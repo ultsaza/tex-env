@@ -1,0 +1,102 @@
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# LaTeX intermediate files
+*.dvi
+*.xdv
+*-converted-to.*
+
+# BibTeX files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Build tool files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Build directories
+_minted*/
+_markdown*/
+
+# AUX-related
+*.nav
+*.snm
+*.vrb
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+
+# gnuplot
+*.gnuplot
+*.table
+
+# hyperref
+*.brf
+
+# knitr
+*-concordance.tex
+
+# makeindex
+*.idx
+*.ilg
+*.ind
+
+# nomencl
+*.nlo
+*.nls
+
+# sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# pythontex
+*.pytxcode
+pythontex-files-*/
+
+# tcolorbox
+*.listing
+
+# xindy
+*.xdy
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# Output files (uncomment if you want to ignore PDFs)
+# *.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# direnv
+.direnv/
