@@ -18,12 +18,20 @@
     {
       "name": "uplatex",
       "command": "uplatex",
-      "args": ["-interaction=nonstopmode", "-outdir=%OUTDIR%", "%DOC%"]
+      "args": [
+        "-interaction=nonstopmode", 
+        "-aux-directory=%OUTDIR%", 
+        "-output-directory=%OUTDIR%",
+        "%DOC%"
+    ]
     },
     {
       "name": "dvipdfmx",
       "command": "dvipdfmx",
-      "args": ["%DOCFILE%.dvi"]
+      "args": [
+        "%OUTDIR%/%DOCFILE%.dvi",
+        "-dvi-directory=%OUTDIR%",
+    ]
     }
   ],
 
