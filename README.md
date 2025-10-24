@@ -18,6 +18,7 @@ nixとdirenvが入っていれば大丈夫そう（後に詳細に書く）
 
 ```basｗ
 direnv allow .
+nix develop
 ```
 
 以降は
@@ -25,6 +26,12 @@ direnv allow .
 ```bash
 code .
 ```
+
+パッケージを追加する際は`flake.nix`に追記し
+```bash
+nix develop
+```
+を実行する
 
 でdirenv拡張により環境が読み込まれた状態でVSCodeが起動する.
 
