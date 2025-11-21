@@ -22,7 +22,7 @@
             physics siunitx titlesec here
             float placeins ulem url moreverb
             tocbibind biber biblatex
-            chktex;
+            chktex abstract;
           })
           ghostscript
           poppler_utils

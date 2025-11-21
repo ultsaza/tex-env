@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx,a4j,11pt]{jsarticle}
+\documentclass[dvipdfmx,a4j,10pt]{jsarticle}
 \input{packages.tex}
 %--- Bibliography settings
 \usepackage[backend=biber,style=numeric]{biblatex}
@@ -10,12 +10,38 @@
 \tableofcontents
 \newpage
 
-\addcontentsline{toc}{section}{はじめに} % section* を目次に追加する.
-\section*{はじめに}
+\title{title}
+\author{author}
+\date{\today}
+\maketitle
+\renewcommand{\abstractname}{概要}
+\begin{abstract}
+  abstract
+\end{abstract}
 
+
+
+\setlength{\columnseprule}{0.4pt} % 列の区切り線の太さを設定
+
+\addcontentsline{toc}{section}{はじめに} % section* で作成したセクションの名前を目次に追加する.
+
+\section*{はじめに}
 \begin{align}
   \vb*{F} = m \vb*{a}
 \end{align}
+
+
+hyprlink: \url{https://en.wikipedia.org/wiki/Hyperlink}
+
+\section{新しいセクション}
+
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+\end{lstlisting}
 
 test\cite{name}.
 
