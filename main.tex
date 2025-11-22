@@ -10,10 +10,8 @@
 \begin{document}
 \input{title_page.tex}
 \newpage 
-\tableofcontents
-\newpage
 
-\title{Video Super-Resolution With Convolutional Neural Networks のまとめ}
+\title{Video Super-Resolution With Convolutional Neural Networks\cite{7444187} のまとめ}
 \author{鳥光 俊佑}
 \maketitle
 
@@ -21,27 +19,48 @@
 
 \setlength{\columnseprule}{0.4pt} % 列の区切り線の太さを設定
 
-\addcontentsline{toc}{section}{はじめに} % section* で作成したセクションの名前を目次に追加する.
-
-\section*{はじめに}
-\begin{align}
-  \vb*{F} = m \vb*{a}
-\end{align}
 
 
-hyprlink: \url{https://en.wikipedia.org/wiki/Hyperlink}
 
-\section{新しいセクション}
 
-\begin{lstlisting}
-#include <stdio.h>
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
-\end{lstlisting}
+\section*{なんのための研究か}
 
-test\cite{7444187}.
+UHDテレビの普及に伴い, 低画質映像から
+高画質映像へ変換する超解像アルゴリズム(SRアルゴリズム)が求められている。
+
+この研究は, CNNを映像の超解像へ
+応用し, 静止画での事前学習と時間的に連続するフレームの
+統合により, 従来より高速かつ高画質な超解像を実現する研究である。
+
+\section*{従来のアプローチとその問題点}
+
+\subsection*{モデルベースのアプローチ}
+モデルベースのアプローチとして, 
+事前分布をもちいたベイズ推定に基づく手法が提案されている。
+
+この手法は後述するCNNベースの手法と比較して計算コストが高いという問題がある。
+
+\subsection*{学習ベースのアプローチ}
+
+学習ベースのアプローチとして
+辞書学習に基づく手法が紹介されている。
+この手法では, 低解像度画像と高解像度画像のパッチペアから辞書を学習し, 
+辞書の元の線型結合として画像を再構成する。
+
+この手法では, 画像の再構成もパッチごとに行うため, 計算コストが高いという問題がある。
+
+\subsection*{単一画像にCNNを用いたアプローチ}
+
+単一画像の超解像にCNNを用いる手法(SR CNN)も提案されている。CNNベースの手法では, 
+画像を超解像する処理は順伝播しょりによって行われるため, ベイズのような方法と異なり反復計算を必要としない。
+
+しかし, この手法では映像の時間次元の情報を活用できないという問題がある。
+
+
+\section*{この論文でのアプローチ}
+
+この論文では, 複数の低解像度フレームを入力として, 高解像度フレームを
+再構成するCNN
 
 \printbibliography[title=参考文献] % 参考文献の出力. 参考文献が不要ならばコメントアウトする.
 \end{document}
