@@ -176,19 +176,41 @@ w_v(m, n, t- 1, c) = w_v(m, n, t, c) &= w_v(m, n, t+ 1, c)\\
 論文では, (a), (b), (c)の3つのアーキテクチャが提案されているが, フレーム結合のタイミングによって
 重みを拡張する層が異なることに注意が必要である。
 
+\section*{実験と評価方法}
+
+\subsection*{データセット}
+Myanmar video sequence(3840x2160から960x540にダウンサンプリングしたもの)とVideoset4
+データセットが使用された。
+
+\subsection*{比較対象}
+Bicubic, ScSR, A+, SRCNN, ANN, ベイズ推定法, Video Enhencer, VSRnet(提案手法)が比較対象として使用された。
+\subsection*{評価方法}
+PSNR, SSIMが評価指標として使用された。また, 実行時間による評価も行われた。
 
 
+\section*{この論文の手法の課題}
 
+\subsection*{オプティカルフローアルゴリズムへの依存}
 
+AMCの定義式はオプティカルフローアルゴリズムによって計算される
+Motion Compensationに依存している。オプティカルフローアルゴリズムによる
+推定が難しい領域では, AMCの効果も期待できない可能性がある。
 
+\subsection*{ReLU関数の特性}
 
+ReLU関数の副作用として, いくつかのフィルタが機能しなくなることが観察された。
+更新ステップの間に大きな重みの更新が生じた際, 
+ReLU関数の特性により, いくつかのニューロンの勾配が0になり続けてしまうことが原因とされている。
 
+\section*{次に読むべき論文}
 
+オプティカルフローアルゴリズムへ依存しない, Motion Compensationの手法について述べた論文と
+して次の論文を挙げる。
 
+Real-Time Video Super-Resolution with Spatio-Temporal Networks and Motion Compensation \cite{8099787}
 
-
-
-
+この論文では, 
+Spatial Transformer Networkを用いたMotion Compensationの手法が述べられている。
 
 
 \printbibliography[title=参考文献] % 参考文献の出力. 参考文献が不要ならばコメントアウトする.
