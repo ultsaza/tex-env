@@ -1,23 +1,21 @@
-\documentclass[dvipdfmx,a4j,10pt]{jsarticle}
+\documentclass[dvipdfmx,a4j,10pt, twocolumn]{jsarticle}
 \input{packages.tex}
 %--- Bibliography settings
 \usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{refs.bib}
 %-------------------------
+
+\usepackage[margin=10mm]{geometry}
+\pagestyle{empty} % ページ番号を消す
 \begin{document}
 \input{title_page.tex}
 \newpage 
 \tableofcontents
 \newpage
 
-\title{title}
-\author{author}
-\date{\today}
+\title{Video Super-Resolution With Convolutional Neural Networks のまとめ}
+\author{鳥光 俊佑}
 \maketitle
-\renewcommand{\abstractname}{概要}
-\begin{abstract}
-  abstract
-\end{abstract}
 
 
 
@@ -43,7 +41,7 @@ int main() {
 }
 \end{lstlisting}
 
-test\cite{name}.
+test\cite{7444187}.
 
 \printbibliography[title=参考文献] % 参考文献の出力. 参考文献が不要ならばコメントアウトする.
 \end{document}
