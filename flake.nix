@@ -1,32 +1,23 @@
 {
   description = "Per-project TeX devShell";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
 
-  outputs = { self, nixpkgs }:
-  let
-    system = "x86_64-linux"; # Change this to your desired system 
-    pkgs = import nixpkgs { inherit system; };
-  in {
-    devShells.${system}.default = pkgs.mkShell {
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      devShells.default = pkgs.mkShell {
         packages = with pkgs; [
           (texlive.combine {
             inherit (texlive)
-            scheme-small
-            latexmk
-            collection-latexrecommended
-            collection-fontsrecommended
-            collection-langjapanese
-            xetex luatex dvisvgm dvipng
-            uplatex comment subfigure mathtools
-            physics siunitx titlesec here
-            float placeins ulem url moreverb
-            tocbibind biber biblatex
-            chktex abstract;
+            scheme-full;
           })
-          ghostscript
-          poppler_utils
         ];
       };
-  };
+    });
 }
