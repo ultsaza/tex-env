@@ -8,7 +8,7 @@ https://github.com/James-Yu/LaTeX-Workshop のホットリロード機能を利�
 
 ## requirements
 
-nixとdirenvが入っていれば大丈夫そう（後に詳細に書く）
+Flakeが有効化されたNixとdirenv
 
 ## usage
 
@@ -16,8 +16,8 @@ nixとdirenvが入っていれば大丈夫そう（後に詳細に書く）
 
 初回のみ
 
-```basｗ
-direnv allow .
+```bash
+direnv allow
 ```
 
 以降は
